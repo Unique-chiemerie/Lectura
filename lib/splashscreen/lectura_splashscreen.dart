@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lecture_app/screens/homescreen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lecture_app/theme/lectura_theme.dart';
 
 class Lecturasplash extends StatefulWidget {
   const Lecturasplash({super.key});
@@ -44,7 +46,7 @@ class _LecturasplashState extends State<Lecturasplash> {
       },
     );
     Future.delayed(
-      const Duration(seconds: 5),
+      const Duration(seconds: 3),
       () {
         setState(() {
           turapacity = 1.0;
@@ -55,6 +57,8 @@ class _LecturasplashState extends State<Lecturasplash> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Center(
       child: Row(
@@ -63,17 +67,19 @@ class _LecturasplashState extends State<Lecturasplash> {
           AnimatedOpacity(
             duration: const Duration(milliseconds: 700),
             opacity: lecpacity,
-            child: const Text(
-              'Lec',
-              style: TextStyle(fontSize: 20, color: Colors.black),
+            //the L logo spawning opacitically
+            child: SvgPicture.asset(
+              'assets/lecutra_logo.svg',
+              height: screenHeight * 0.2,
+              width: screenWidth * 0.1,
             ),
           ),
           AnimatedOpacity(
             duration: const Duration(milliseconds: 900),
             opacity: turapacity,
-            child: const Text(
-              'tura',
-              style: TextStyle(fontSize: 20, color: Colors.black),
+            child: Text(
+              'ectura',
+              style: lecturaTheme.textTheme.bodyMedium,
             ),
           ),
         ],
