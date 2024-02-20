@@ -5,9 +5,12 @@ class Homescreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Homescreen'),
+    return Scaffold(
+      body: const Center(
+        child: Text('Work in progress'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
       ),
     );
   }

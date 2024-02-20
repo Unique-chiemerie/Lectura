@@ -67,20 +67,20 @@ class _LecturasplashState extends State<Lecturasplash> {
           AnimatedOpacity(
             duration: const Duration(milliseconds: 700),
             opacity: lecpacity,
-            //the L logo spawning opacitically
-            child: const Text('L'),
-            // child: SvgPicture.asset(
-            //   'assets/lecutra_logo.svg',
-            //   height: screenHeight * 0.2,
-            //   width: screenWidth * 0.1,
-            // ),
+            //the  logo spawning opacitically
+            child: SvgPicture.asset(
+              'assets/lecutra_logo.svg',
+              height: screenHeight * 0.15,
+              width: screenWidth * 0.1,
+            ),
           ),
           AnimatedOpacity(
             duration: const Duration(milliseconds: 900),
             opacity: turapacity,
             child: Text(
               'ectura',
-              style: lecturaTheme.textTheme.bodyMedium,
+              style: lecturaTheme.textTheme.bodyMedium!
+                  .copyWith(fontSize: screenWidth * 0.1),
             ),
           ),
         ],
