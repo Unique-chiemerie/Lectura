@@ -44,7 +44,7 @@ class _LecturasplashState extends State<Lecturasplash> {
       },
     );
     Future.delayed(
-      const Duration(milliseconds: 500),
+      const Duration(seconds: 5),
       () {
         setState(() {
           turapacity = 1.0;
@@ -58,15 +58,18 @@ class _LecturasplashState extends State<Lecturasplash> {
     return Scaffold(
         body: Center(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Opacity(
+          AnimatedOpacity(
+            duration: const Duration(milliseconds: 700),
             opacity: lecpacity,
             child: const Text(
               'Lec',
               style: TextStyle(fontSize: 20, color: Colors.black),
             ),
           ),
-          Opacity(
+          AnimatedOpacity(
+            duration: const Duration(milliseconds: 900),
             opacity: turapacity,
             child: const Text(
               'tura',
