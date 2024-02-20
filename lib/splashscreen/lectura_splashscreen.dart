@@ -14,8 +14,11 @@ class _LecturasplashState extends State<Lecturasplash> {
   @override
   void initState() {
     super.initState();
+    pacityTimer();
+    skip();
   }
 
+// function to push the new screen
   void skip() {
     Future.delayed(
       const Duration(
@@ -30,6 +33,7 @@ class _LecturasplashState extends State<Lecturasplash> {
     );
   }
 
+  //function to show the lectura text stylishly
   void pacityTimer() {
     Future.delayed(
       const Duration(seconds: 2),
