@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lecture_app/theme/lectura_theme.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -25,16 +26,48 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(
               height: screenHeight * 0.1,
               width: screenWidth,
-              child: const Row(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CircleAvatar(
-                    child: Center(
-                      child: Text('B'),
+                  //The circled avatar
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: CircleAvatar(
+                      maxRadius: screenWidth * 0.1,
+                      backgroundColor: lecturaTheme.cardColor,
+                      child: Center(
+                        child: SvgPicture.asset('assets/Boy.svg'),
+                      ),
+                    ),
+                  ),
+                  //The Biodata things
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Container(
+                      height: screenHeight * 0.1,
+                      width: screenWidth * 0.6,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: lecturaTheme.cardColor,
+                      ),
+                    ),
+                  ),
+                  //the three dots
+                  Padding(
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.more_horiz_rounded,
+                        color: Colors.black,
+                        size: screenWidth * 0.05,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+            //the course banner
           ],
         ),
       ),
