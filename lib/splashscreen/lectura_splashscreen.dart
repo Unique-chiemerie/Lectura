@@ -80,7 +80,7 @@ class _LecturasplashState extends State<Lecturasplash> {
             child: Text(
               'ectura',
               style: lecturaTheme.textTheme.bodyMedium!
-                  .copyWith(fontSize: screenWidth * 0.1),
+                  .copyWith(fontSize: screenWidth * 0.07),
             ),
           ),
         ],

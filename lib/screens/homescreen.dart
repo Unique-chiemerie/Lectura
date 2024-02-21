@@ -14,16 +14,41 @@ class _HomescreenState extends State<Homescreen> {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: const Center(
-        child: Text('Work in progress'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //space away
+            SizedBox(
+              height: screenHeight * 0.03,
+            ),
+            //The biodata and user name
+            SizedBox(
+              height: screenHeight * 0.1,
+              width: screenWidth,
+              child: const Row(
+                children: [
+                  CircleAvatar(
+                    child: Center(
+                      child: Text('B'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.transparent,
-        onPressed: () {},
-        child: SvgPicture.asset(
-          'assets/AddFAB.svg',
-          height: screenHeight * 0.1,
-          width: screenWidth * 0.05,
+      floatingActionButton: SizedBox(
+        height: screenHeight * 0.1,
+        width: screenWidth * 0.2,
+        child: FloatingActionButton(
+          backgroundColor: Colors.transparent,
+          onPressed: () {},
+          elevation: 0,
+          child: SvgPicture.asset(
+            'assets/AddFAB.svg',
+            width: screenWidth * 0.2,
+          ),
         ),
       ),
     );
