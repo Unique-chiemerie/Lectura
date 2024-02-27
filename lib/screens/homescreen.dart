@@ -50,6 +50,29 @@ class _HomescreenState extends State<Homescreen> {
                         borderRadius: BorderRadius.circular(10),
                         color: lecturaTheme.cardColor,
                       ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          //name
+                          Padding(
+                            padding: EdgeInsets.all(screenWidth * 0.05),
+                            child: Text(
+                              'Name:',
+                              style: lecturaTheme.textTheme.bodyMedium!
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ),
+                          //department
+                          Padding(
+                            padding: EdgeInsets.all(screenWidth * 0.05),
+                            child: Text(
+                              'Dept:',
+                              style: lecturaTheme.textTheme.bodyMedium!
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   //the three dots
