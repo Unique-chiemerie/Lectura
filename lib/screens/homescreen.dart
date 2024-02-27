@@ -18,6 +18,7 @@ class _HomescreenState extends State<Homescreen> {
     var name = 'Unique';
     var dept = 'Mcs';
     var level = '100';
+    var nocourse = '3';
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -74,10 +75,14 @@ class _HomescreenState extends State<Homescreen> {
                                 SizedBox(
                                   width: screenWidth * 0.1,
                                 ),
-                                Text(
-                                  'Lvl:$level',
-                                  style: lecturaTheme.textTheme.bodyMedium!
-                                      .copyWith(color: Colors.white),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(left: screenWidth * 0.05),
+                                  child: Text(
+                                    'Lvl:$level',
+                                    style: lecturaTheme.textTheme.bodyMedium!
+                                        .copyWith(color: Colors.white),
+                                  ),
                                 ),
                               ],
                             ),
@@ -138,7 +143,30 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
             ),
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
             //course backboard
+            Container(
+              height: screenHeight * 0.6,
+              width: screenWidth * 0.9,
+              decoration: BoxDecoration(
+                color: Colors.pink[50],
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: screenWidth * 0.03, right: screenWidth * 0.6),
+              child: Text(
+                'Num of courses: $nocourse',
+                style: TextStyle(
+                    fontSize: screenWidth * 0.03, color: Colors.black),
+              ),
+            ),
           ],
         ),
       ),
