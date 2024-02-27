@@ -65,6 +65,7 @@ flutter:
     - assets/lecutra_logo.svg
     - assets/AddFAB.svg
     - assets/Boy.svg
+    - assets/Vector.svg
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
