@@ -14,6 +14,11 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+//dummy variables
+    var name = 'Unique';
+    var dept = 'Mcs';
+    var level = '100';
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -55,18 +60,38 @@ class _HomescreenState extends State<Homescreen> {
                         children: [
                           //name
                           Padding(
-                            padding: EdgeInsets.all(screenWidth * 0.05),
-                            child: Text(
-                              'Name:',
-                              style: lecturaTheme.textTheme.bodyMedium!
-                                  .copyWith(color: Colors.white),
+                            padding: EdgeInsets.only(
+                              left: screenHeight * 0.02,
+                              top: screenHeight * 0.02,
                             ),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'Name: $name',
+                                  style: lecturaTheme.textTheme.bodyMedium!
+                                      .copyWith(color: Colors.white),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.1,
+                                ),
+                                Text(
+                                  'Lvl:$level',
+                                  style: lecturaTheme.textTheme.bodyMedium!
+                                      .copyWith(color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenHeight * 0.01,
                           ),
                           //department
                           Padding(
-                            padding: EdgeInsets.all(screenWidth * 0.05),
+                            padding: EdgeInsets.only(
+                              left: screenHeight * 0.02,
+                            ),
                             child: Text(
-                              'Dept:',
+                              'Dept: $dept',
                               style: lecturaTheme.textTheme.bodyMedium!
                                   .copyWith(color: Colors.white),
                             ),
@@ -90,7 +115,30 @@ class _HomescreenState extends State<Homescreen> {
                 ],
               ),
             ),
+            SizedBox(
+              height: screenHeight * 0.03,
+            ),
             //the course banner
+            Padding(
+              padding: EdgeInsets.only(
+                  right: screenWidth * 0.5, left: screenWidth * 0.03),
+              child: Container(
+                height: screenHeight * 0.05,
+                width: screenWidth * 0.5,
+                decoration: BoxDecoration(
+                  color: lecturaTheme.cardColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Text(
+                    'Courses',
+                    style: lecturaTheme.textTheme.bodyMedium!.copyWith(
+                        color: Colors.white, fontSize: screenWidth * 0.05),
+                  ),
+                ),
+              ),
+            ),
+            //course backboard
           ],
         ),
       ),
