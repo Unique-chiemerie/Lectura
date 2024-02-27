@@ -73,11 +73,11 @@ class _HomescreenState extends State<Homescreen> {
                                       .copyWith(color: Colors.white),
                                 ),
                                 SizedBox(
-                                  width: screenWidth * 0.1,
+                                  width: screenWidth * 0.05,
                                 ),
                                 Padding(
-                                  padding:
-                                      EdgeInsets.only(left: screenWidth * 0.05),
+                                  padding: EdgeInsets.only(
+                                      right: screenWidth * 0.05),
                                   child: Text(
                                     'Lvl:$level',
                                     style: lecturaTheme.textTheme.bodyMedium!
@@ -154,7 +154,20 @@ class _HomescreenState extends State<Homescreen> {
                 color: Colors.pink[50],
                 borderRadius: BorderRadius.circular(10),
               ),
+              child: ListView.builder(
+                itemCount: 3,
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text('Mcs'),
+                    trailing: const Icon(Icons.work),
+                    tileColor: lecturaTheme.cardColor,
+                  ),
+                ),
+              ),
             ),
+
+            //space for the number of courses
             SizedBox(
               height: screenHeight * 0.05,
             ),
@@ -175,7 +188,39 @@ class _HomescreenState extends State<Homescreen> {
         width: screenWidth * 0.2,
         child: FloatingActionButton(
           backgroundColor: Colors.transparent,
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) => Column(
+                children: [
+                  SizedBox(
+                    height: screenHeight * 0.15,
+                    width: screenWidth * 0.7,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide.none,
+                          ),
+                          labelText: 'Enter course name',
+                          labelStyle: lecturaTheme.textTheme.bodyMedium!
+                              .copyWith(color: Colors.white),
+                          filled: true,
+                          fillColor: lecturaTheme.cardColor),
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.05,
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.1,
+                    width: screenWidth * 0.05,
+                    child: const Placeholder(),
+                  ),
+                ],
+              ),
+            );
+          },
           elevation: 0,
           child: SvgPicture.asset(
             'assets/AddFAB.svg',
