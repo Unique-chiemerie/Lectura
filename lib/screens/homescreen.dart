@@ -191,43 +191,49 @@ class _HomescreenState extends State<Homescreen> {
           onPressed: () {
             showModalBottomSheet(
               context: context,
-              builder: (context) => Scaffold(
-                body: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: screenHeight * 0.05,
-                    ),
-                    Center(
-                      child: SizedBox(
-                        height: screenHeight * 0.15,
-                        width: screenWidth * 0.8,
-                        child: TextField(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide.none,
-                              ),
-                              labelText: 'Enter course name',
-                              labelStyle: lecturaTheme.textTheme.bodyMedium!
-                                  .copyWith(
-                                      color: const Color.fromARGB(
-                                          255, 207, 207, 207)),
-                              filled: true,
-                              fillColor: lecturaTheme.cardColor),
-                        ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              builder: (context) => Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: screenHeight * 0.05,
+                  ),
+                  Center(
+                    child: SizedBox(
+                      height: screenHeight * 0.15,
+                      width: screenWidth * 0.8,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide.none,
+                            ),
+                            labelText: 'Enter course name',
+                            labelStyle: lecturaTheme.textTheme.bodyMedium!
+                                .copyWith(
+                                    color: const Color.fromARGB(
+                                        255, 255, 251, 251)),
+                            filled: true,
+                            fillColor: lecturaTheme.cardColor),
                       ),
                     ),
-                    SizedBox(
-                      height: screenHeight * 0.05,
-                    ),
-                    SvgPicture.asset(
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.05,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: SvgPicture.asset(
                       'assets/Vector.svg',
                       height: screenHeight * 0.1,
                       width: screenWidth * 0.2,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             );
           },
