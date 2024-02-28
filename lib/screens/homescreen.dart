@@ -122,7 +122,7 @@ class _HomescreenState extends State<Homescreen> {
                       icon: Icon(
                         Icons.more_horiz_rounded,
                         color: Colors.black,
-                        size: screenWidth * 0.05,
+                        size: screenWidth * 0.07,
                       ),
                     ),
                   ),
