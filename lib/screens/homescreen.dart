@@ -108,18 +108,18 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                   ),
                   //the three dots
-                  Padding(
-                    padding: EdgeInsets.only(bottom: screenHeight * 0.1),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Settingscreen(),
-                          ),
-                        );
-                      },
-                      icon: Icon(
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        SlidingRoute(
+                          page: const Settingscreen(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+                      child: Icon(
                         Icons.more_horiz_rounded,
                         color: Colors.black,
                         size: screenWidth * 0.07,
