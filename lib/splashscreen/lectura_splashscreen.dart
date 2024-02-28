@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lecture_app/screens/homescreen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
+import 'package:lecture_app/theme/sliding_route.dart';
 
 class Lecturasplash extends StatefulWidget {
   const Lecturasplash({super.key});
@@ -28,11 +29,8 @@ class _LecturasplashState extends State<Lecturasplash> {
       ),
       () => Navigator.pushReplacement(
         context,
-        PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) =>
-              const Homescreen(),
-          transitionsBuilder:
-              (context, animation, secondaryAnimation, child) {},
+        SlidingRoute(
+          page: const Homescreen(),
         ),
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lecture_app/screens/settings_screen.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
+import 'package:lecture_app/theme/sliding_route.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -109,7 +111,14 @@ class _HomescreenState extends State<Homescreen> {
                   Padding(
                     padding: EdgeInsets.only(bottom: screenHeight * 0.1),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          SlidingRoute(
+                            page: const Settingscreen(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.more_horiz_rounded,
                         color: Colors.black,
