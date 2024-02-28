@@ -103,7 +103,12 @@ class _SettingscreenState extends State<Settingscreen> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          child: SvgPicture.asset('assets/Vector.svg'),
         ),
       ),
     );
