@@ -114,8 +114,8 @@ class _HomescreenState extends State<Homescreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          SlidingRoute(
-                            page: const Settingscreen(),
+                          MaterialPageRoute(
+                            builder: (context) => const Settingscreen(),
                           ),
                         );
                       },
