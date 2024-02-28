@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
 
 class Settingscreen extends StatefulWidget {
@@ -16,16 +17,27 @@ class _SettingscreenState extends State<Settingscreen> {
     return SafeArea(
       child: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //little spacce before the icon
             SizedBox(
-              height: screenHeight * 0.1,
+              height: screenHeight * 0.07,
             ),
             //the avatar
             SizedBox(
-              height: screenHeight * 0.2,
+              height: screenHeight * 0.1,
               width: screenWidth * 0.3,
-              child: const Placeholder(),
+              child: CircleAvatar(
+                maxRadius: screenWidth * 0.1,
+                backgroundColor: lecturaTheme.cardColor,
+                child: Center(
+                  child: SvgPicture.asset('assets/Boy.svg'),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.05,
             ),
             //enter your name
             Center(
@@ -47,9 +59,6 @@ class _SettingscreenState extends State<Settingscreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: screenHeight * 0.2,
-            ),
             //Enter your department
             Center(
               child: SizedBox(
@@ -70,9 +79,7 @@ class _SettingscreenState extends State<Settingscreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: screenHeight * 0.2,
-            ),
+
             //Enter your Level
             Center(
               child: SizedBox(
