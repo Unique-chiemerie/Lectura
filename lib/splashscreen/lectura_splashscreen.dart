@@ -28,8 +28,11 @@ class _LecturasplashState extends State<Lecturasplash> {
       ),
       () => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => const Homescreen(),
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const Homescreen(),
+          transitionsBuilder:
+              (context, animation, secondaryAnimation, child) {},
         ),
       ),
     );
