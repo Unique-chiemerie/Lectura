@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lecture_app/screens/settings_screen.dart';
@@ -14,6 +16,12 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   final courselist = [];
   final TextEditingController _textcont = TextEditingController();
+  List bookicons = [
+    'assets/red_book.svg',
+    'assets/green_book.svg',
+    'assets/blue_Book.svg',
+  ];
+
   void addCourse() {
     final course = _textcont.text;
     courselist.add(course);
@@ -193,7 +201,14 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         //the Trailing book icon that should be random
 
-                        trailing: const Icon(Icons.work),
+                        trailing: IconButton(
+                          onPressed: () {},
+                          icon: SvgPicture.asset(
+                            bookicons[Random().nextInt(3)],
+                            height: screenHeight * 0.05,
+                            width: screenWidth * 0.05,
+                          ),
+                        ),
                         tileColor: lecturaTheme.cardColor,
                       ),
                     ),
