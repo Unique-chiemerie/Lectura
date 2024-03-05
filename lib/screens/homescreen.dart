@@ -12,10 +12,18 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  final courselist = [];
+  final TextEditingController _textcont = TextEditingController();
+  void addCourse() {
+    final course = _textcont.text;
+    courselist.add(course);
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+
 //dummy variables
     var name = 'Unique';
     var dept = 'Mcs';
@@ -164,15 +172,18 @@ class _HomescreenState extends State<Homescreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    title: const Text('Mcs'),
-                    trailing: const Icon(Icons.work),
-                    tileColor: lecturaTheme.cardColor,
-                  ),
-                ),
+                itemCount: courselist.length,
+                itemBuilder: (context, index) {
+                  final course = courselist[index];
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      title: Text(course),
+                      trailing: const Icon(Icons.work),
+                      tileColor: lecturaTheme.cardColor,
+                    ),
+                  );
+                },
               ),
             ),
 
@@ -214,6 +225,7 @@ class _HomescreenState extends State<Homescreen> {
                       height: screenHeight * 0.15,
                       width: screenWidth * 0.8,
                       child: TextField(
+                        controller: _textcont,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
@@ -234,6 +246,8 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   InkWell(
                     onTap: () {
+                      addCourse();
+                      _textcont.clear();
                       Navigator.of(context).pop();
                     },
                     child: SvgPicture.asset(
