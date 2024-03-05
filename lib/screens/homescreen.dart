@@ -177,10 +177,25 @@ class _HomescreenState extends State<Homescreen> {
                   final course = courselist[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      title: Text(course),
-                      trailing: const Icon(Icons.work),
-                      tileColor: lecturaTheme.cardColor,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: lecturaTheme.cardColor,
+                        boxShadow: const [
+                          BoxShadow(color: Colors.grey, blurRadius: 7),
+                        ],
+                      ),
+                      child: ListTile(
+                        title: Text(
+                          course,
+                          style: lecturaTheme.textTheme.bodyMedium!
+                              .copyWith(color: Colors.white),
+                        ),
+                        //the Trailing book icon that should be random
+
+                        trailing: const Icon(Icons.work),
+                        tileColor: lecturaTheme.cardColor,
+                      ),
                     ),
                   );
                 },
@@ -246,7 +261,9 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      addCourse();
+                      setState(() {
+                        addCourse();
+                      });
                       _textcont.clear();
                       Navigator.of(context).pop();
                     },
