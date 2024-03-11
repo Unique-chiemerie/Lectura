@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lecture_app/screens/settings_screen.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
 import 'package:lecture_app/theme/sliding_route.dart';
@@ -31,12 +32,13 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    var userinfo = Hive.box('biodata');
 
 //dummy variables
-    var name = 'Unique';
-    var dept = 'Mcs';
-    var level = '100';
-    var nocourse = '3';
+    var name = userinfo.get(0);
+    var dept = userinfo.get(1);
+    var level = userinfo.get(2);
+    var nocourse = 'work in pro..';
 
     return Scaffold(
       body: SingleChildScrollView(
