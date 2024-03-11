@@ -15,6 +15,7 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  var userinfo = Hive.box('biodata');
   final courselist = [];
   final TextEditingController _textcont = TextEditingController();
   List bookicons = [
@@ -32,12 +33,11 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    var userinfo = Hive.box('biodata');
 
 //dummy variables
-    var name = userinfo.get(0);
-    var dept = userinfo.get(1);
-    var level = userinfo.get(2);
+    var name = userinfo.isEmpty ? 'Unique' : userinfo.get(0);
+    var dept = userinfo.isEmpty ? 'MCS' : userinfo.get(1);
+    var level = userinfo.isEmpty ? '100' : userinfo.get(2);
     var nocourse = 'work in pro..';
 
     return Scaffold(
