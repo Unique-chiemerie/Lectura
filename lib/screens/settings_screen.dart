@@ -14,6 +14,10 @@ class _SettingscreenState extends State<Settingscreen> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    TextEditingController namecontroller = TextEditingController();
+    TextEditingController departmentroller = TextEditingController();
+    TextEditingController leveleditingcontroller = TextEditingController();
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -46,6 +50,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   height: screenHeight * 0.15,
                   width: screenWidth * 0.8,
                   child: TextField(
+                    controller: namecontroller,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
@@ -66,6 +71,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   height: screenHeight * 0.15,
                   width: screenWidth * 0.8,
                   child: TextField(
+                    controller: departmentroller,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
@@ -87,6 +93,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   height: screenHeight * 0.15,
                   width: screenWidth * 0.8,
                   child: TextField(
+                    controller: leveleditingcontroller,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
