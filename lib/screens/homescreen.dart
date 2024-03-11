@@ -183,6 +183,7 @@ class _HomescreenState extends State<Homescreen> {
                 itemCount: courselist.length,
                 itemBuilder: (context, index) {
                   final course = courselist[index];
+                  final bookIndex = Random().nextInt(3);
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -204,7 +205,7 @@ class _HomescreenState extends State<Homescreen> {
                         trailing: IconButton(
                           onPressed: () {},
                           icon: SvgPicture.asset(
-                            bookicons[Random().nextInt(3)],
+                            bookicons[bookIndex],
                             height: screenHeight * 0.05,
                             width: screenWidth * 0.05,
                           ),
