@@ -257,6 +257,8 @@ class _HomescreenState extends State<Homescreen> {
                       width: screenWidth * 0.8,
                       child: TextField(
                         controller: _textcont,
+                        maxLength: 6,
+                        textCapitalization: TextCapitalization.characters,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
