@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
 
 class Settingscreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _SettingscreenState extends State<Settingscreen> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    var userinfo = Hive.box('biodata');
     TextEditingController namecontroller = TextEditingController();
     TextEditingController departmentroller = TextEditingController();
     TextEditingController leveleditingcontroller = TextEditingController();
@@ -113,6 +115,9 @@ class _SettingscreenState extends State<Settingscreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+            userinfo.put(0, namecontroller.text);
+            userinfo.put(1, departmentroller.text);
+            userinfo.put(2, leveleditingcontroller.text);
             Navigator.pop(context);
           },
           elevation: 0,
