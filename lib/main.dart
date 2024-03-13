@@ -9,6 +9,8 @@ void main() async {
   //create some custom hive box
   // ignore: unused_local_variable
   var userinfo = await Hive.openBox('biodata');
+  // ignore: unused_local_variable
+  var course = await Hive.openBox('course');
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(

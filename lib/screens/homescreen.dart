@@ -16,6 +16,7 @@ class Homescreen extends StatefulWidget {
 
 class _HomescreenState extends State<Homescreen> {
   var userinfo = Hive.box('biodata');
+  var courseBOX = Hive.box('course');
   final courselist = [];
   final TextEditingController _textcont = TextEditingController();
   List bookicons = [
@@ -184,7 +185,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView.builder(
                 itemCount: courselist.length,
                 itemBuilder: (context, index) {
-                  final course = courselist[index];
+                  final course = courseBOX.get(0);
                   final bookIndex = Random().nextInt(3);
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -197,11 +198,15 @@ class _HomescreenState extends State<Homescreen> {
                         ],
                       ),
                       child: ListTile(
-                        title: Text(
-                          course,
-                          style: lecturaTheme.textTheme.bodyMedium!
-                              .copyWith(color: Colors.white),
-                        ),
+                        title: courseBOX.isEmpty
+                            ? const Center(
+                                child: Text('Start adding courses '),
+                              )
+                            : Text(
+                                course[index],
+                                style: lecturaTheme.textTheme.bodyMedium!
+                                    .copyWith(color: Colors.white),
+                              ),
                         //the Trailing book icon that should be random
 
                         trailing: IconButton(
@@ -285,6 +290,7 @@ class _HomescreenState extends State<Homescreen> {
                     onTap: () {
                       setState(() {
                         addCourse();
+                        courseBOX.put(0, courselist);
                       });
                       _textcont.clear();
                       Navigator.of(context).pop();
