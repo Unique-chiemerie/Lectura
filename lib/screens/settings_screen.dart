@@ -115,11 +115,15 @@ class _SettingscreenState extends State<Settingscreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() {
-              userinfo.put(0, namecontroller.text);
-              userinfo.put(1, departmentroller.text);
-              userinfo.put(2, leveleditingcontroller.text);
-            });
+            if (namecontroller.text.isNotEmpty ||
+                departmentroller.text.isNotEmpty ||
+                leveleditingcontroller.text.isNotEmpty) {
+              setState(() {
+                userinfo.put(0, namecontroller.text);
+                userinfo.put(1, departmentroller.text);
+                userinfo.put(2, leveleditingcontroller.text);
+              });
+            }
             Navigator.pop(context);
           },
           elevation: 0,
