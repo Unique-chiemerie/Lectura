@@ -65,6 +65,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   width: screenWidth * 0.8,
                   child: TextField(
                     controller: namecontroller,
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
@@ -85,6 +86,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   height: screenHeight * 0.15,
                   width: screenWidth * 0.8,
                   child: TextField(
+                    style: const TextStyle(color: Colors.white),
                     controller: departmentroller,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -107,6 +109,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   height: screenHeight * 0.15,
                   width: screenWidth * 0.8,
                   child: TextField(
+                    style: const TextStyle(color: Colors.white),
                     controller: leveleditingcontroller,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
