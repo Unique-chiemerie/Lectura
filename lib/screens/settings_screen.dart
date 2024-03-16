@@ -22,6 +22,16 @@ class _SettingscreenState extends State<Settingscreen> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.keyboard_arrow_left_rounded,
+                color: lecturaTheme.cardColor,
+              )),
+        ),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

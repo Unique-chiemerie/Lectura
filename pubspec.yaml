@@ -70,6 +70,7 @@ flutter:
     - assets/blue_Book.svg
     - assets/red_book.svg
     - assets/green_book.svg
+
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

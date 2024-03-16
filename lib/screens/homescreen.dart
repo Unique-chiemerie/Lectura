@@ -290,7 +290,6 @@ class _HomescreenState extends State<Homescreen> {
                     onTap: () {
                       setState(() {
                         addCourse();
-                        courseBOX.put(0, courselist);
                       });
                       _textcont.clear();
                       Navigator.of(context).pop();
