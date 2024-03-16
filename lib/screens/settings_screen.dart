@@ -24,13 +24,15 @@ class _SettingscreenState extends State<Settingscreen> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.keyboard_arrow_left_rounded,
-                color: lecturaTheme.cardColor,
-              )),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.keyboard_arrow_left_rounded,
+              color: lecturaTheme.cardColor,
+            ),
+            iconSize: screenWidth * 0.1,
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(
