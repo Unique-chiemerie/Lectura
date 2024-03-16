@@ -121,7 +121,7 @@ class _SettingscreenState extends State<Settingscreen> {
                             color: const Color.fromARGB(255, 255, 251, 251)),
                         filled: true,
                         fillColor: lecturaTheme.cardColor),
-                    maxLength: 6,
+                    maxLength: 3,
                   ),
                 ),
               ),
