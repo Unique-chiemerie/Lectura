@@ -75,7 +75,7 @@ class _SettingscreenState extends State<Settingscreen> {
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
                         ),
-                        labelText: 'Enter your name ',
+                        labelText: 'Enter your name',
                         labelStyle: lecturaTheme.textTheme.bodyMedium!.copyWith(
                             color: const Color.fromARGB(255, 255, 251, 251)),
                         filled: true,
@@ -102,7 +102,7 @@ class _SettingscreenState extends State<Settingscreen> {
                             color: const Color.fromARGB(255, 255, 251, 251)),
                         filled: true,
                         fillColor: lecturaTheme.cardColor),
-                    maxLength: 5,
+                    maxLength: 3,
                   ),
                 ),
               ),
@@ -114,6 +114,7 @@ class _SettingscreenState extends State<Settingscreen> {
                   width: screenWidth * 0.8,
                   child: TextField(
                     style: const TextStyle(color: Colors.white),
+                    keyboardType: TextInputType.number,
                     controller: leveleditingcontroller,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
