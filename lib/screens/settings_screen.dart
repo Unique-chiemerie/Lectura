@@ -13,9 +13,11 @@ class Settingscreen extends StatefulWidget {
 
 class _SettingscreenState extends State<Settingscreen> {
   @override
-  final userDataProvider = Provider.of<UserDataProvider>(context);
-
   Widget build(BuildContext context) {
+    final userDataProvider = Provider.of<UserDataProvider>(context);
+
+
+    
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     var userinfo = Hive.box('biodata');
