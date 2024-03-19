@@ -185,8 +185,11 @@ class _HomescreenState extends State<Homescreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: courseBOX.isEmpty
-                  ? const Center(
-                      child: Text('No course added yet '),
+                  ? Center(
+                      child: Text(
+                        'No course added yet',
+                        style: lecturaTheme.textTheme.bodyMedium,
+                      ),
                     )
                   : ListView.builder(
                       itemCount: courselist.length,
