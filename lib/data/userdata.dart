@@ -10,7 +10,7 @@ class UserData {
 
 class UserDataProvider extends ChangeNotifier {
   UserData userData = UserData(name: 'Unique', dept: 'MCS', level: '100');
-  UserData get Userinfo => userData;
+  UserData get userInfo => userData;
 
   void updateUserData(UserData newinfo) {
     userData = newinfo;

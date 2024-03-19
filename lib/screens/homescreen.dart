@@ -103,7 +103,7 @@ class _HomescreenState extends State<Homescreen> {
                                   padding: EdgeInsets.only(
                                       right: screenWidth * 0.05),
                                   child: Text(
-                                    'Lvl:${userdata.level}',
+                                    'Lvl: ${userdata.level}',
                                     style: lecturaTheme.textTheme.bodyMedium!
                                         .copyWith(color: Colors.white),
                                   ),
