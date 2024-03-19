@@ -15,7 +15,7 @@ void main() async {
   var course = await Hive.openBox('course');
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    Provider<UserDataProvider>(
+    ChangeNotifierProvider<UserDataProvider>(
       create: (context) => UserDataProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
