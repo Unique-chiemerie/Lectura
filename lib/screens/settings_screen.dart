@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:lecture_app/data/userdata.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
 
 class Settingscreen extends StatefulWidget {
@@ -12,6 +13,8 @@ class Settingscreen extends StatefulWidget {
 
 class _SettingscreenState extends State<Settingscreen> {
   @override
+  final userDataProvider = Provider.of<UserDataProvider>(context);
+
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
