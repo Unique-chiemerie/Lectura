@@ -7,6 +7,7 @@ import 'package:lecture_app/data/userdata.dart';
 import 'package:lecture_app/screens/settings_screen.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
 import 'package:lecture_app/theme/sliding_route.dart';
+import 'package:provider/provider.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -42,7 +43,8 @@ class _HomescreenState extends State<Homescreen> {
     // var level = userinfo.isEmpty ? '100' : userinfo.get(2);
     var nocourse = 'work in pro..';
 
-    final userdata = UserDataProvider().userData;
+    final userDataProvider = Provider.of<UserDataProvider>(context);
+    final userdata = userDataProvider.userData;
 
     return Scaffold(
       body: SingleChildScrollView(
