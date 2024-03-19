@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lecture_app/data/userdata.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
+import 'package:provider/provider.dart';
 
 class Settingscreen extends StatefulWidget {
   const Settingscreen({super.key});
@@ -16,8 +17,6 @@ class _SettingscreenState extends State<Settingscreen> {
   Widget build(BuildContext context) {
     final userDataProvider = Provider.of<UserDataProvider>(context);
 
-
-    
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     var userinfo = Hive.box('biodata');
@@ -138,6 +137,11 @@ class _SettingscreenState extends State<Settingscreen> {
             if (namecontroller.text.isNotEmpty ||
                 departmentroller.text.isNotEmpty ||
                 leveleditingcontroller.text.isNotEmpty) {
+              userDataProvider.updateUserData(UserData(
+                  name: namecontroller.text,
+                  dept: departmentroller.text,
+                  level: leveleditingcontroller.text));
+
               setState(() {
                 userinfo.put(0, namecontroller.text);
                 userinfo.put(1, departmentroller.text);

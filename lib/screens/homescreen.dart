@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:lecture_app/data/userdata.dart';
 import 'package:lecture_app/screens/settings_screen.dart';
 import 'package:lecture_app/theme/lectura_theme.dart';
 import 'package:lecture_app/theme/sliding_route.dart';
@@ -36,10 +37,12 @@ class _HomescreenState extends State<Homescreen> {
     final screenWidth = MediaQuery.of(context).size.width;
 
 //dummy variables
-    var name = userinfo.isEmpty ? 'Unique' : userinfo.get(0);
-    var dept = userinfo.isEmpty ? 'MCS' : userinfo.get(1);
-    var level = userinfo.isEmpty ? '100' : userinfo.get(2);
+    // var name = userinfo.isEmpty ? 'Unique' : userinfo.get(0);
+    // var dept = userinfo.isEmpty ? 'MCS' : userinfo.get(1);
+    // var level = userinfo.isEmpty ? '100' : userinfo.get(2);
     var nocourse = 'work in pro..';
+
+    final userdata = UserDataProvider().userData;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -89,7 +92,7 @@ class _HomescreenState extends State<Homescreen> {
                             child: Row(
                               children: [
                                 Text(
-                                  'Name: $name',
+                                  'Name: ${userdata.name}',
                                   style: lecturaTheme.textTheme.bodyMedium!
                                       .copyWith(color: Colors.white),
                                 ),
@@ -100,7 +103,7 @@ class _HomescreenState extends State<Homescreen> {
                                   padding: EdgeInsets.only(
                                       right: screenWidth * 0.05),
                                   child: Text(
-                                    'Lvl:$level',
+                                    'Lvl:${userdata.level}',
                                     style: lecturaTheme.textTheme.bodyMedium!
                                         .copyWith(color: Colors.white),
                                   ),
@@ -117,7 +120,7 @@ class _HomescreenState extends State<Homescreen> {
                               left: screenHeight * 0.02,
                             ),
                             child: Text(
-                              'Dept: $dept',
+                              'Dept: ${userdata.dept}',
                               style: lecturaTheme.textTheme.bodyMedium!
                                   .copyWith(color: Colors.white),
                             ),
