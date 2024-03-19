@@ -143,12 +143,12 @@ class _SettingscreenState extends State<Settingscreen> {
                   level: leveleditingcontroller.text));
               Navigator.pop(context);
               setState(() {
+                userinfo.put(0, namecontroller.text);
                 userinfo.put(
-                    0,
-                    UserData(
-                        name: namecontroller.text,
-                        dept: departmentroller.text,
-                        level: leveleditingcontroller.text));
+                  1,
+                  departmentroller.text,
+                );
+                userinfo.put(2, leveleditingcontroller.text);
               });
             }
           },
