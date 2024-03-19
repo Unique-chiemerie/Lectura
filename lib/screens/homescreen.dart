@@ -36,7 +36,6 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    final course = courseBOX.get(0);
 
     var nocourse = courselist.length;
 
@@ -184,50 +183,43 @@ class _HomescreenState extends State<Homescreen> {
                 color: Colors.pink[50],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: courseBOX.isEmpty
-                  ? Center(
-                      child: Text(
-                        'No course added yet',
-                        style: lecturaTheme.textTheme.bodyMedium!
-                            .copyWith(color: Colors.black),
+              child: ListView.builder(
+                itemCount: courselist.length,
+                itemBuilder: (context, index) {
+                  final bookIndex = Random().nextInt(3);
+                  final course = courseBOX.get(0);
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: lecturaTheme.cardColor,
+                        boxShadow: const [
+                          BoxShadow(color: Colors.grey, blurRadius: 7),
+                        ],
                       ),
-                    )
-                  : ListView.builder(
-                      itemCount: courselist.length,
-                      itemBuilder: (context, index) {
-                        final bookIndex = Random().nextInt(3);
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: lecturaTheme.cardColor,
-                              boxShadow: const [
-                                BoxShadow(color: Colors.grey, blurRadius: 7),
-                              ],
-                            ),
-                            child: ListTile(
-                              title: Text(
-                                course[index],
-                                style: lecturaTheme.textTheme.bodyMedium!
-                                    .copyWith(color: Colors.white),
-                              ),
-                              //the Trailing book icon that should be random
+                      child: ListTile(
+                        title: Text(
+                          course[index],
+                          style: lecturaTheme.textTheme.bodyMedium!
+                              .copyWith(color: Colors.white),
+                        ),
+                        //the Trailing book icon that should be random
 
-                              trailing: IconButton(
-                                onPressed: () {},
-                                icon: SvgPicture.asset(
-                                  bookicons[bookIndex],
-                                  height: screenHeight * 0.05,
-                                  width: screenWidth * 0.05,
-                                ),
-                              ),
-                              tileColor: lecturaTheme.cardColor,
-                            ),
+                        trailing: IconButton(
+                          onPressed: () {},
+                          icon: SvgPicture.asset(
+                            bookicons[bookIndex],
+                            height: screenHeight * 0.05,
+                            width: screenWidth * 0.05,
                           ),
-                        );
-                      },
+                        ),
+                        tileColor: lecturaTheme.cardColor,
+                      ),
                     ),
+                  );
+                },
+              ),
             ),
 
             //space for the number of courses
