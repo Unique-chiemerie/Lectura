@@ -188,7 +188,8 @@ class _HomescreenState extends State<Homescreen> {
                   ? Center(
                       child: Text(
                         'No course added yet',
-                        style: lecturaTheme.textTheme.bodyMedium,
+                        style: lecturaTheme.textTheme.bodyMedium!
+                            .copyWith(color: Colors.white),
                       ),
                     )
                   : ListView.builder(
