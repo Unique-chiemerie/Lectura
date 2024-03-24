@@ -269,7 +269,6 @@ class _HomescreenState extends State<Homescreen> {
                       width: screenWidth * 0.8,
                       child: TextField(
                         controller: _textcont,
-                        maxLength: 7,
                         style: const TextStyle(color: Colors.white),
                         cursorColor: Colors.purple,
                         textCapitalization: TextCapitalization.characters,
