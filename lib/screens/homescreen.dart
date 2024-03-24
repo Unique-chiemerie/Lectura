@@ -195,7 +195,7 @@ class _HomescreenState extends State<Homescreen> {
                 itemCount: courselist.length,
                 itemBuilder: (context, index) {
                   var bookIndex = 1;
-                  final course = courselist[index];
+                  final coursey = courselist[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -208,7 +208,7 @@ class _HomescreenState extends State<Homescreen> {
                       ),
                       child: ListTile(
                         title: Text(
-                          course[index],
+                          coursey[index],
                           style: lecturaTheme.textTheme.bodyMedium!
                               .copyWith(color: Colors.white),
                         ),
