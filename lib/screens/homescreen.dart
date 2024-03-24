@@ -89,11 +89,19 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                             child: Row(
                               children: [
-                                Text(
-                                  'Name: ${userdata.name}',
-                                  style: lecturaTheme.textTheme.bodyMedium!
-                                      .copyWith(color: Colors.white),
-                                ),
+                                userinfo.isEmpty
+                                    ? Text(
+                                        'Name: ${userdata.name}',
+                                        style: lecturaTheme
+                                            .textTheme.bodyMedium!
+                                            .copyWith(color: Colors.white),
+                                      )
+                                    : Text(
+                                        'Name: ${userinfo.get(0)}',
+                                        style: lecturaTheme
+                                            .textTheme.bodyMedium!
+                                            .copyWith(color: Colors.white),
+                                      ),
                                 SizedBox(
                                   width: screenWidth * 0.05,
                                 ),
