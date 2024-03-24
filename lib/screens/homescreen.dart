@@ -30,6 +30,8 @@ class _HomescreenState extends State<Homescreen> {
   void addCourse() {
     final course = _textcont.text;
     courselist.add(course);
+    //the course box hivebox should also add the course text indexically here
+    courseBOX.put(0, courselist);
   }
 
   @override
@@ -194,8 +196,8 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView.builder(
                 itemCount: courselist.length,
                 itemBuilder: (context, index) {
-                  final bookIndex = Random().nextInt(3);
-                  final course = courseBOX.get(0);
+                  var bookIndex = 1;
+                  final course = courselist[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
